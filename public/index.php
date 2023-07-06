@@ -7,9 +7,11 @@ use App\Controller\IndexController;
 use App\DependencyInjection\Container;
 use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
+use SpotifyWebAPI\SpotifyWebAPI;
 use Symfony\Component\Dotenv\Dotenv;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use SpotifyWebAPI\Session;
 
 $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__ . '/../.env');
@@ -40,10 +42,24 @@ $twig = new Environment($loader, [
   'cache' => __DIR__ . '/../var/twig/',
 ]);
 
+$api = new SpotifyWebAPI();
+$session = new Session(
+  '4ee7a6c88d74441294354b489a464bc2',
+  '0c14e22c97cd49adb21cc48b1036075d',
+);
+
+$session->requestCredentialsToken();
+$accessToken = $session->getAccessToken();
+
+$api = new SpotifyWebAPI();
+$api->setAccessToken($accessToken);
+
 $serviceContainer = new Container();
 $serviceContainer
   ->set(Environment::class, $twig)
-  ->set(PDO::class, $pdo);
+  ->set(PDO::class, $pdo)
+  ->set(SpotifyWebAPI::class, $api);
+
 
 // Appeler un routeur pour lui transférer la requête
 $router = new Router($serviceContainer);
@@ -53,35 +69,4 @@ try {
   $router->execute($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
 } catch (RouteNotFoundException $ex) {
   http_response_code(404);
-}
-
-$session = new SpotifyWebAPI\Session(
-  '4ee7a6c88d74441294354b489a464bc2',
-  '0c14e22c97cd49adb21cc48b1036075d',
-);
-
-$session->requestCredentialsToken();
-$accessToken = $session->getAccessToken();
-
-$api = new SpotifyWebAPI\SpotifyWebAPI();
-$api->setAccessToken($accessToken);
-
-
-echo '<form method="get">';
-echo '<input type="text" name="textInput"/>';
-echo '<input type="submit" value="Rechercher" name="submitInput"/><br>';
-echo '</form>';
-
-if (isset($_GET['submitInput'])) {
-  $text = $_GET['textInput'];
-  if ($text == '') {
-    return;
-  }
-  $results = $api->search($text, 'track');
-
-  foreach ($results->tracks->items as $artist) {
-    echo $artist->name, '  ', $artist->artists[0]->name, '<br>';
-    echo '<img src="' . $artist->album->images[2]->url . '"><br>';
-    echo '<a href="/addPlaylist"><button>Add Playlist</button></a>';
-  };
 }

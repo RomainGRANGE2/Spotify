@@ -8,14 +8,6 @@ use Twig\Environment;
 
 class IndexController extends AbstractController
 {
-  private PDO $pdo;
-
-  public function __construct(Environment $twig, PDO $pdo)
-  {
-    parent::__construct($twig);
-    $this->pdo = $pdo;
-  }
-
   #[Route("/", name: "homepage")]
   public function home(): string
   {
@@ -36,5 +28,12 @@ class IndexController extends AbstractController
     }
 
     return $this->twig->render('index.html.twig', ['tableau' => $row]);
+  }
+  #[Route("/showMusic", name: "showMusic", httpMethod: "POST")]
+  public function showMusic()
+  {
+    $textshearch = $_POST['textInput'];
+    $results = $this->api->search($textshearch, 'track');
+    return $this->twig->render('index.html.twig', ['listemusique' => $results]);
   }
 }
