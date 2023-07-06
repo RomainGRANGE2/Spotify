@@ -4,17 +4,11 @@ namespace App\Controller;
 
 use App\Routing\Attribute\Route;
 
-class PlaylistController
+class PlaylistController extends AbstractController
 {
-  #[Route("/contact", name: "contact_page")]
-  public function contact()
+  #[Route("/addPlaylist", name: "addPlaylist", httpMethod: "GET")]
+  public function addPlaylist(): string
   {
-    echo "Page de contact";
-  }
-
-  #[Route("/devis", name: "page_devis")]
-  public function devis()
-  {
-    echo "Page de devis";
+    return $this->twig->render('addPlaylist.html.twig');
   }
 }
