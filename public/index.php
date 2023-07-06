@@ -11,6 +11,17 @@ use Symfony\Component\Dotenv\Dotenv;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
+$session = new SpotifyWebAPI\Session(
+  '4ee7a6c88d74441294354b489a464bc2',
+  '0c14e22c97cd49adb21cc48b1036075d',
+);
+
+$session->requestCredentialsToken();
+$accessToken = $session->getAccessToken();
+
+$api = new SpotifyWebAPI\SpotifyWebAPI();
+$api->setAccessToken($accessToken);
+
 $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__ . '/../.env');
 
@@ -43,7 +54,8 @@ $twig = new Environment($loader, [
 $serviceContainer = new Container();
 $serviceContainer
   ->set(Environment::class, $twig)
-  ->set(PDO::class, $pdo);
+  ->set(PDO::class, $pdo)
+  ->set(SpotifyWebAPI\SpotifyWebAPI::class, $api);
 
 // Appeler un routeur pour lui transférer la requête
 $router = new Router($serviceContainer);

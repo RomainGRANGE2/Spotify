@@ -3,7 +3,7 @@
         'name' => 'ld-web/su-2023-php-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '0820b446415d9f5a86bedffbd298040b255b6f3e',
+        'reference' => '85091ab21da2294322b6ae105454b53ef3ecf0a1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'ld-web/su-2023-php-mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '0820b446415d9f5a86bedffbd298040b255b6f3e',
+            'reference' => '85091ab21da2294322b6ae105454b53ef3ecf0a1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
