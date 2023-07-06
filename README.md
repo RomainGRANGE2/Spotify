@@ -25,3 +25,13 @@ composer start
 ## Cours
 
 Le cours complet se trouve à [cette adresse](https://ld-web.github.io/su-2023-php-mvc-course/).
+
+## But du projet 
+
+Le but du projet était de rechercher une musique grace a l'API de Spotify et mettre les différentes musiques dans des playlists créer et les stockées dans une base de données.
+
+## Difficultées
+
+Nous avons rencontrer des difficultés pour ajouter les musiques dans des playlists créer car nous n'arrivions pas à utiliser les services de Spotify dans les controllers.
+Donc on pouvait pas aller plus loin dans le projet.
+Nous avons essayer d'y arriver mais les différentes documentations que nous avons trouvé n'utilisaient pas le modèle MVC et donc ne pouvaient pas nous aidé.
