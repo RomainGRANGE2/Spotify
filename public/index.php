@@ -82,6 +82,6 @@ if (isset($_GET['submitInput'])) {
   foreach ($results->tracks->items as $artist) {
     echo $artist->name, '  ', $artist->artists[0]->name, '<br>';
     echo '<img src="' . $artist->album->images[2]->url . '"><br>';
-    echo '<a href="playlist?idtrack=' . $artist->id . '"><button>Add Playlist</button></a>';
+    echo '<a href="/addPlaylist"><button>Add Playlist</button></a>';
   };
 }

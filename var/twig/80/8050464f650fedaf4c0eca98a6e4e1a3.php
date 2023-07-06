@@ -34,7 +34,7 @@ class __TwigTemplate_fc4031e373bdc003037f1d86dbae2e33 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<h1>Hello Sciences-U</h1>";
+        echo "<h1>Ajouter une musique</h1>";
     }
 
     public function getTemplateName()
@@ -49,6 +49,6 @@ class __TwigTemplate_fc4031e373bdc003037f1d86dbae2e33 extends Template
 
     public function getSourceContext()
     {
-        return new Source("<h1>Hello Sciences-U</h1>", "index.html.twig", "/workspaces/su-2023-php-mvc/templates/index.html.twig");
+        return new Source("<h1>Ajouter une musique</h1>", "index.html.twig", "/workspaces/Spotify/templates/index.html.twig");
     }
 }

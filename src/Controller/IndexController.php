@@ -11,4 +11,10 @@ class IndexController extends AbstractController
   {
     return $this->twig->render('index.html.twig');
   }
+
+  #[Route("/addPlaylist", name: "addPlaylist")]
+  public function addPlaylist(): string
+  {
+    return $this->twig->render('addPlaylist.html.twig');
+  }
 }
