@@ -1,10 +1,91 @@
-<form action="/showMusic" method="post">
-  <input type="text" name="textInput"/>
-  <input type="submit" value="Rechercher" name="submitInput"/><br>
-</form>
-<h1>Résultats de recherche :</h1>
-{% for track in listemusique.tracks.items %}
-  <h2>{{ track.name }}</h2>
-  <h3>{{ track.artists[0].name }}</h3>
-  <img src="{{ track.album.images[2].url }}">
-{% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+form {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  flex: 9;
+}
+
+form input[type="submit"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 17px;
+  background-color: #1db954;
+  color: white;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #1ed760;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.track:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.track img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.track h2, .track h3 {
+  margin: 0;
+}
+
+.track h3 {
+  color: #666;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <form action="/showMusic" method="post">
+    <input type="text" name="textInput"/>
+    <input type="submit" value="Rechercher" name="submitInput"/>
+  </form>
+  <h1>Résultats de recherche :</h1>
+  {% for track in listemusique.tracks.items %}
+    <div class="track">
+      <img src="{{ track.album.images[2].url }}">
+      <div>
+        <h2>{{ track.name }}</h2>
+        <h3>{{ track.artists[0].name }}</h3>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</body>
+</html>
