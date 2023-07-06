@@ -69,7 +69,7 @@ $api->setAccessToken($accessToken);
 
 echo '<form method="get">';
 echo '<input type="text" name="textInput"/>';
-echo '<input type="submit" name="submitInput"/><br>';
+echo '<input type="submit" value="Rechercher" name="submitInput"/><br>';
 echo '</form>';
 
 if (isset($_GET['submitInput'])) {
