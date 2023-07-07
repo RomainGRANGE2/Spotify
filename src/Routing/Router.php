@@ -23,6 +23,7 @@ class Router
   public function addRoute(
     string $name,
     string $url,
+    string $id,
     string $httpMethod,
     string $controllerClass,
     string $controllerMethod
@@ -30,16 +31,17 @@ class Router
     $this->routes[] = [
       'name' => $name,
       'url' => $url,
+      'id' => $id,
       'http_method' => $httpMethod,
       'controller' => $controllerClass,
       'method' => $controllerMethod
     ];
   }
 
-  public function getRoute(string $uri, string $httpMethod): ?array
+  public function getRoute(string $uri, string $httpMethod, string $id): ?array
   {
     foreach ($this->routes as $route) {
-      if ($route['url'] === $uri && $route['http_method'] === $httpMethod) {
+      if ($route['url'] === $uri && $route['http_method'] === $httpMethod && $route['id'] == $id) {
         return $route;
       }
     }
@@ -53,9 +55,9 @@ class Router
    * @return void
    * @throws RouteNotFoundException
    */
-  public function execute(string $requestUri, string $httpMethod)
+  public function execute(string $requestUri, string $httpMethod, string $id)
   {
-    $route = $this->getRoute($requestUri, $httpMethod);
+    $route = $this->getRoute($requestUri, $httpMethod, $id);
 
     if ($route === null) {
       throw new RouteNotFoundException($requestUri, $httpMethod);
