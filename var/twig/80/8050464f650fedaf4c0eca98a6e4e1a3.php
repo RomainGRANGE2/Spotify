@@ -13,34 +13,34 @@ use Twig\Source;
 use Twig\Template;
 
 /* index.html.twig */
+
 class __TwigTemplate_fc4031e373bdc003037f1d86dbae2e33 extends Template
 {
-    private $source;
-    private $macros = [];
+  private $source;
+  private $macros = [];
 
-    public function __construct(Environment $env)
-    {
-        parent::__construct($env);
+  public function __construct(Environment $env)
+  {
+    parent::__construct($env);
 
-        $this->source = $this->getSourceContext();
+    $this->source = $this->getSourceContext();
 
-        $this->parent = false;
+    $this->parent = false;
 
-        $this->blocks = [
-        ];
-    }
+    $this->blocks = [];
+  }
 
-    protected function doDisplay(array $context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 1
-        echo "<!DOCTYPE html>
+  protected function doDisplay(array $context, array $blocks = [])
+  {
+    $macros = $this->macros;
+    // line 1
+    echo "<!DOCTYPE html>
 <html>
 <head>
 <style>
-z
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Gotham, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -117,6 +117,7 @@ h1 {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .custom-button:hover {
@@ -132,63 +133,63 @@ h1 {
   </form>
   <h1>Résultats de recherche :</h1>
   ";
-        // line 98
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["listemusique"] ?? null), "tracks", [], "any", false, false, false, 98), "items", [], "any", false, false, false, 98));
-        foreach ($context['_seq'] as $context["_key"] => $context["track"]) {
-            // line 99
-            echo "    <div class=\"track\">
+    // line 98
+    $context['_parent'] = $context;
+    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["listemusique"] ?? null), "tracks", [], "any", false, false, false, 98), "items", [], "any", false, false, false, 98));
+    foreach ($context['_seq'] as $context["_key"] => $context["track"]) {
+      // line 99
+      echo "    <div class=\"track\">
       <img src=\"";
-            // line 100
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_0 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["track"], "album", [], "any", false, false, false, 100), "images", [], "any", false, false, false, 100)) && is_array($__internal_compile_0) || $__internal_compile_0 instanceof ArrayAccess ? ($__internal_compile_0[2] ?? null) : null), "url", [], "any", false, false, false, 100), "html", null, true);
-            echo "\">
+      // line 100
+      echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_0 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["track"], "album", [], "any", false, false, false, 100), "images", [], "any", false, false, false, 100)) && is_array($__internal_compile_0) || $__internal_compile_0 instanceof ArrayAccess ? ($__internal_compile_0[2] ?? null) : null), "url", [], "any", false, false, false, 100), "html", null, true);
+      echo "\">
       <div>
         <h2>";
-            // line 102
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["track"], "name", [], "any", false, false, false, 102), "html", null, true);
-            echo "</h2>
+      // line 102
+      echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["track"], "name", [], "any", false, false, false, 102), "html", null, true);
+      echo "</h2>
         <h3>";
-            // line 103
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_1 = twig_get_attribute($this->env, $this->source, $context["track"], "artists", [], "any", false, false, false, 103)) && is_array($__internal_compile_1) || $__internal_compile_1 instanceof ArrayAccess ? ($__internal_compile_1[0] ?? null) : null), "name", [], "any", false, false, false, 103), "html", null, true);
-            echo "</h3>
+      // line 103
+      echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_1 = twig_get_attribute($this->env, $this->source, $context["track"], "artists", [], "any", false, false, false, 103)) && is_array($__internal_compile_1) || $__internal_compile_1 instanceof ArrayAccess ? ($__internal_compile_1[0] ?? null) : null), "name", [], "any", false, false, false, 103), "html", null, true);
+      echo "</h3>
         <a href=\"/addPlaylist\" class=\"custom-button\">Ajouter a la playlist</a>
       </div>
     </div>
   ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['track'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 108
-        echo "</div>
+    }
+    $_parent = $context['_parent'];
+    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['track'], $context['_parent'], $context['loop']);
+    $context = array_intersect_key($context, $_parent) + $_parent;
+    // line 108
+    echo "</div>
 </body>
 </html>";
-    }
+  }
 
-    public function getTemplateName()
-    {
-        return "index.html.twig";
-    }
+  public function getTemplateName()
+  {
+    return "index.html.twig";
+  }
 
-    public function isTraitable()
-    {
-        return false;
-    }
+  public function isTraitable()
+  {
+    return false;
+  }
 
-    public function getDebugInfo()
-    {
-        return array (  163 => 108,  152 => 103,  148 => 102,  143 => 100,  140 => 99,  136 => 98,  37 => 1,);
-    }
+  public function getDebugInfo()
+  {
+    return array(166 => 108,  156 => 104,  152 => 103,  148 => 102,  143 => 100,  140 => 99,  136 => 98,  37 => 1,);
+  }
 
-    public function getSourceContext()
-    {
-        return new Source("<!DOCTYPE html>
+  public function getSourceContext()
+  {
+    return new Source("<!DOCTYPE html>
 <html>
 <head>
 <style>
-z
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Gotham, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -265,6 +266,7 @@ h1 {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .custom-button:hover {
@@ -292,5 +294,5 @@ h1 {
 </div>
 </body>
 </html>", "index.html.twig", "/workspaces/Spotify/templates/index.html.twig");
-    }
+  }
 }
