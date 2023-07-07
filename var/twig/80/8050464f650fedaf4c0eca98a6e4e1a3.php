@@ -38,9 +38,9 @@ class __TwigTemplate_fc4031e373bdc003037f1d86dbae2e33 extends Template
 <html>
 <head>
 <style>
-z
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Gotham, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -116,6 +116,7 @@ h1 {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .custom-button:hover {
@@ -131,24 +132,24 @@ h1 {
   </form>
   <h1>Résultats de recherche :</h1>
   ";
-        // line 97
+        // line 98
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["listemusique"] ?? null), "tracks", [], "any", false, false, false, 97), "items", [], "any", false, false, false, 97));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["listemusique"] ?? null), "tracks", [], "any", false, false, false, 98), "items", [], "any", false, false, false, 98));
         foreach ($context['_seq'] as $context["_key"] => $context["track"]) {
-            // line 98
+            // line 99
             echo "    <div class=\"track\">
       <img src=\"";
-            // line 99
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_0 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["track"], "album", [], "any", false, false, false, 99), "images", [], "any", false, false, false, 99)) && is_array($__internal_compile_0) || $__internal_compile_0 instanceof ArrayAccess ? ($__internal_compile_0[2] ?? null) : null), "url", [], "any", false, false, false, 99), "html", null, true);
+            // line 100
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_0 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["track"], "album", [], "any", false, false, false, 100), "images", [], "any", false, false, false, 100)) && is_array($__internal_compile_0) || $__internal_compile_0 instanceof ArrayAccess ? ($__internal_compile_0[2] ?? null) : null), "url", [], "any", false, false, false, 100), "html", null, true);
             echo "\">
       <div>
         <h2>";
-            // line 101
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["track"], "name", [], "any", false, false, false, 101), "html", null, true);
+            // line 102
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["track"], "name", [], "any", false, false, false, 102), "html", null, true);
             echo "</h2>
         <h3>";
-            // line 102
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_1 = twig_get_attribute($this->env, $this->source, $context["track"], "artists", [], "any", false, false, false, 102)) && is_array($__internal_compile_1) || $__internal_compile_1 instanceof ArrayAccess ? ($__internal_compile_1[0] ?? null) : null), "name", [], "any", false, false, false, 102), "html", null, true);
+            // line 103
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_1 = twig_get_attribute($this->env, $this->source, $context["track"], "artists", [], "any", false, false, false, 103)) && is_array($__internal_compile_1) || $__internal_compile_1 instanceof ArrayAccess ? ($__internal_compile_1[0] ?? null) : null), "name", [], "any", false, false, false, 103), "html", null, true);
             echo "</h3>
         <a href=\"/addPlaylist\" class=\"custom-button\">Ajouter a la playlist</a>
       </div>
@@ -158,7 +159,7 @@ h1 {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['track'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 107
+        // line 108
         echo "</div>
 </body>
 </html>";
@@ -176,7 +177,7 @@ h1 {
 
     public function getDebugInfo()
     {
-        return array (  162 => 107,  151 => 102,  147 => 101,  142 => 99,  139 => 98,  135 => 97,  37 => 1,);
+        return array (  163 => 108,  152 => 103,  148 => 102,  143 => 100,  140 => 99,  136 => 98,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -185,9 +186,9 @@ h1 {
 <html>
 <head>
 <style>
-z
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Gotham, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -263,6 +264,7 @@ h1 {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .custom-button:hover {
