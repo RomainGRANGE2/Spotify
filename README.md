@@ -32,6 +32,5 @@ Le but du projet était de rechercher une musique grace a l'API de Spotify et me
 
 ## Difficultées
 
-Nous avons rencontrer des difficultés pour ajouter les musiques dans des playlists créer car nous n'arrivions pas à utiliser les services de Spotify dans les controllers.
-Donc on pouvait pas aller plus loin dans le projet.
+Nous avons rencontrer des difficultés pour ajouter les musiques dans des playlists créer car nous n'arrivions pas à utiliser des id dans les routes. Nous avons donc été bloquer
 Nous avons essayer d'y arriver mais les différentes documentations que nous avons trouvé n'utilisaient pas le modèle MVC et donc ne pouvaient pas nous aidé.
