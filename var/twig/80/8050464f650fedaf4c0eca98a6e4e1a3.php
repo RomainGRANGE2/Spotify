@@ -151,10 +151,7 @@ h1 {
             // line 103
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_compile_1 = twig_get_attribute($this->env, $this->source, $context["track"], "artists", [], "any", false, false, false, 103)) && is_array($__internal_compile_1) || $__internal_compile_1 instanceof ArrayAccess ? ($__internal_compile_1[0] ?? null) : null), "name", [], "any", false, false, false, 103), "html", null, true);
             echo "</h3>
-        <a href=\"/addPlaylist/";
-            // line 104
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["track"], "id", [], "any", false, false, false, 104), "html", null, true);
-            echo "\" class=\"custom-button\">Ajouter a la playlist</a>
+        <a href=\"/addPlaylist\" class=\"custom-button\">Ajouter a la playlist</a>
       </div>
     </div>
   ";
@@ -180,7 +177,7 @@ h1 {
 
     public function getDebugInfo()
     {
-        return array (  166 => 108,  156 => 104,  152 => 103,  148 => 102,  143 => 100,  140 => 99,  136 => 98,  37 => 1,);
+        return array (  163 => 108,  152 => 103,  148 => 102,  143 => 100,  140 => 99,  136 => 98,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -288,7 +285,7 @@ h1 {
       <div>
         <h2>{{ track.name }}</h2>
         <h3>{{ track.artists[0].name }}</h3>
-        <a href=\"/addPlaylist/{{track.id}}\" class=\"custom-button\">Ajouter a la playlist</a>
+        <a href=\"/addPlaylist\" class=\"custom-button\">Ajouter a la playlist</a>
       </div>
     </div>
   {% endfor %}
