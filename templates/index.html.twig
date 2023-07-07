@@ -72,6 +72,7 @@ h1 {
 
 .custom-button {
   display: inline-block;
+  text-decoration : none;
   background-color: #1db954;
   color: white;
   padding: 10px 20px;
@@ -101,7 +102,7 @@ h1 {
       <div>
         <h2>{{ track.name }}</h2>
         <h3>{{ track.artists[0].name }}</h3>
-        <a href="/addPlaylist" class="custom-button">Ajouter a la playlist</a>
+        <a href="/addPlaylist/{{track.id}}" class="custom-button">Ajouter a la playlist</a>
       </div>
     </div>
   {% endfor %}
